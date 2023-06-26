@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+h2{
+    padding: 0;
+    margin-bottom: 0;
+}
