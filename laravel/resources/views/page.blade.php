@@ -10,8 +10,8 @@
     <div class="container">
         <h1>hallo gyus in page!!</h1>
     </div>
-    <h2><?php echo $nama ?></h2>
-    <h2><?php echo $haha ?></h2>
+    <h2>{{ $nama; }}</h2>
+    <h2>{{ $haha; }}</h2>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="./js/index.js"></script>
