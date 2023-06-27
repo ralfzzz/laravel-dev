@@ -1,4 +1,4 @@
-body{
+/* body{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,4 +11,28 @@ body{
 h2{
     padding: 0;
     margin-bottom: 0;
+} */
+
+body{
+    background-color: #002F7B !important;
+}
+
+.nav-link.active{
+    background-color: #AFEB8F !important;
+    color: #002F7B !important;
+    border-radius: 10px;
+}
+
+.nav-link{
+    color: #AFEB8F !important;
+    /* margin: 1px; */
+}
+
+.nav-link:hover{
+    color: aliceblue !important;
+}
+
+.container {
+    color: #AFEB8F;
+    border: solid #AFEB8F;
 }
