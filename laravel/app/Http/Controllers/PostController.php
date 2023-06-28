@@ -20,4 +20,11 @@ class PostController extends Controller
             'posts' => Post::post($slug)
            ]);
     }
+
+    public function page3(){
+        return view('page3',[
+            'title' => 'Page3',
+            'posts' => Post::page3()
+        ]);
+    }
 }

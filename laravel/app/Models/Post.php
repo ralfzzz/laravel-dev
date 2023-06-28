@@ -28,6 +28,10 @@ class Post
         return collect(self::$posts);
     }
 
+    public static function page3(){
+        return static::all();
+    }
+
     public static function post($slug){
         $content = static::all();
         // $one_item = [];
@@ -41,4 +45,5 @@ class Post
 
         return $content->firstWhere('slug', $slug);
         }
+
 }

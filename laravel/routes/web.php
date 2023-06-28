@@ -49,6 +49,7 @@ Route::get('page2/{slug}', [PostController::class, 'single']);
     //     'posts' => Post::post($slug)
     //    ]);
 
+Route::get('page3', [PostController::class, 'page3']);
 
 
 
