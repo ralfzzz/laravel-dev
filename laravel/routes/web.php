@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,61 +34,21 @@ Route::get('page', function () {
     ]);
 });
 
-Route::get('page2', function () {
-    $content_page2 = [
-        [
-            'title' => 'Post 1',
-            'slug' => 'post-1',
-            'author' => 'Rifqi A',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, consequatur.'
-        ],
-        [
-            'title' => 'Post 2',
-            'slug' => 'post-2',
-            'author' => 'Risa M',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, consequatur. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam minus sed ducimus alias quos odio! Reiciendis totam suscipit eius quibusdam quisquam possimus. Corporis, commodi blanditiis ea repudiandae ullam dolorum.'
-        ]
-    ];
-    return view('page2',[
-        'title' => 'Page2',
-        'posts' => $content_page2
-    ]);
-});
+Route::get('page2', [PostController::class, 'index']);
+    // $content_page2 = [  
+    // ];
 
 //halaman single post 
 //{slug} disebut wild card untuk mengambil apapun isi dari slash
 // Route::get('page2/post-1', function () {
-Route::get('page2/{slug}', function ($slug) {
+Route::get('page2/{slug}', [PostController::class, 'single']);
     // $slug = 'post-1';
-    $content_page2 = [
-        [
-            'title' => 'Post 1',
-            'slug' => 'post-1',
-            'author' => 'Rifqi A',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, consequatur.'
-        ],
-        [
-            'title' => 'Post 2',
-            'slug' => 'post-2',
-            'author' => 'Risa M',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, consequatur. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam minus sed ducimus alias quos odio! Reiciendis totam suscipit eius quibusdam quisquam possimus. Corporis, commodi blanditiis ea repudiandae ullam dolorum.'
-        ]
-    ];
+    
+    // return view('page2_1',[
+    //     'title' => 'Page2_1',
+    //     'posts' => Post::post($slug)
+    //    ]);
 
-    $one_item = [];
-    foreach ($content_page2 as $item) {
-        # code...
-        if ($item['slug'] === $slug) {
-            # code...
-            $one_item = $item;
-        }
-    }
-
-   return view('page2_1',[
-    'title' => 'Page2_1',
-    'posts' => $one_item
-   ]);
-});
 
 
 
