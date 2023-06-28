@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Post;
+// use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -65,3 +65,20 @@ Route::get('page2/{slug}', [PostController::class, 'single']);
 //dibuat tag <a> kemudian diarahkan ke page yang sama tapi ditambah slug;
 ///page2/{slug} si slug ini mengambil get parameternya dan memnyimpan di callback function $slug
 //main.blade.php (./css) realtif ternyata tidak bisa dipakai; kalau @"" blade temlate ngga usah pakai ;
+
+//MODELS
+//to generate models in lavael use "php artisan make:model Flight"
+//models in app/models/...
+//include models first using "use App\Models\Post;" to use
+//in models using static functions "public/private static"
+//to call static use static::; not $this->...; 
+//theres collect function in laravel so change the array like magic, can use many functions
+//
+
+//CONTROLLERS
+//to generate controllers in laravel use "php artisan make:controller UserController"
+//controllers in app/Http/COntrollers ...Controller.php
+//controller is called in the Routes web.php to show data
+//add use App\Http\Controllers\PostController; first to use controller in web.php
+//[PostController::class, 'index'] using that pattern to call controllers
+//make class and and models in controllers to be called in web.php
