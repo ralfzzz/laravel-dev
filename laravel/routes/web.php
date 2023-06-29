@@ -83,3 +83,21 @@ Route::get('page3', [PostController::class, 'page3']);
 //add use App\Http\Controllers\PostController; first to use controller in web.php
 //[PostController::class, 'index'] using that pattern to call controllers
 //make class and and models in controllers to be called in web.php
+
+
+//DATABASE
+//untuk setup db di .env
+//untuk membuat tabel tidak dengan heidimysql langunsg tp menggunakan "migration" di laravel
+//MIGRATION mirip version control seperti git; melacak perubahan di db; melalui class di laravel
+//untuk membuat/create migrasi/table menggunakan perintah php artisan migration; buat dulu file migratikon up() down() di database/migration
+//di dalam file migration ada method up() dan down(); untuk create dan drop db; ngga laig pakai heidi/dbms
+//...migration:rollback -> down(); migrate:fresh -> drop dulu dan create table;
+//kalau mau tambah column ke database/migration/ ke method up() tambahkan columnya
+//ORM/Eloquent memetakan data dalam database ke dalam sebuah model; di db dan laravel ada perantara modelnya; ada ddi app/Models/...
+//bisa CRUD
+//User.php adalah yang merepresentasikan data di db;; active record patter; akan ditambahkan ketika dilakukan save;
+//menggunkan php artisan tinker untuk interaksi dengan laravel;
+//cara akses model ORM pakai tinker artisan ketik ${variabel bebas untuk menampung model sehingga bisa diakses melalui tinker} -> new {nama model yang ada di app/Model}
+//untuk save data supaya bisa terinput ke db menggunakan $tes->save(); disave dulu baru aka nkeinput;
+//untuk meng akses data di db melalui tinker menggunakan $tes->all(); data objeknya sudah dalam bentuk collecton jd sudah bisa menggunakan magic select di collection objek laravel;
+//summary DATABASE(menguhubungkannya di .env), MIGRATION(setup CRUD-nya (database/migrations/....php)), ELOQUENT(ORM)(setup menghubungkan datanya /app/Models/User.php)
