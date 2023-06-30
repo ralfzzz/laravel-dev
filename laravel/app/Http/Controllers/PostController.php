@@ -14,17 +14,18 @@ class PostController extends Controller
         ]);
     }
 
-    public function single($slug){
+    public function single(Post $post){
         return view('page2_1',[
             'title' => 'Page2_1',
-            'posts' => Post::post($slug)
+            // 'posts' => Post::find($slug)
+            'posts' => $post
            ]);
     }
 
     public function page3(){
         return view('page3',[
             'title' => 'Page3',
-            'posts' => Post::page3()
+            'posts' => Post::all()
         ]);
     }
 }

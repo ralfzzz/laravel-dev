@@ -41,7 +41,7 @@ Route::get('page2', [PostController::class, 'index']);
 //halaman single post 
 //{slug} disebut wild card untuk mengambil apapun isi dari slash
 // Route::get('page2/post-1', function () {
-Route::get('page2/{slug}', [PostController::class, 'single']);
+Route::get('page2/{post:slug}', [PostController::class, 'single']);
     // $slug = 'post-1';
     
     // return view('page2_1',[
@@ -92,6 +92,7 @@ Route::get('page3', [PostController::class, 'page3']);
 //untuk membuat/create migrasi/table menggunakan perintah php artisan migration; buat dulu file migratikon up() down() di database/migration
 //di dalam file migration ada method up() dan down(); untuk create dan drop db; ngga laig pakai heidi/dbms
 //...migration:rollback -> down(); migrate:fresh -> drop dulu dan create table;
+//migrate doang hanya nambah yang baru tidak merubah yg sudah ada
 //kalau mau tambah column ke database/migration/ ke method up() tambahkan columnya
 //ORM/Eloquent memetakan data dalam database ke dalam sebuah model; di db dan laravel ada perantara modelnya; ada ddi app/Models/...
 //bisa CRUD
@@ -101,3 +102,13 @@ Route::get('page3', [PostController::class, 'page3']);
 //untuk save data supaya bisa terinput ke db menggunakan $tes->save(); disave dulu baru aka nkeinput;
 //untuk meng akses data di db melalui tinker menggunakan $tes->all(); data objeknya sudah dalam bentuk collecton jd sudah bisa menggunakan magic select di collection objek laravel;
 //summary DATABASE(menguhubungkannya di .env), MIGRATION(setup CRUD-nya (database/migrations/....php)), ELOQUENT(ORM)(setup menghubungkan datanya /app/Models/User.php)
+
+//Models
+//<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam placeat, qui et exercitationem quo nemo praesentium voluptatibus odit tenetur corrupti ut consequatur.</p><p>Sed laudantium nisi necessitatibus ad sunt earum voluptates voluptatibus, molestiae eos placeat totam obcaecati fuga incidunt iure similique. Consequuntur debitis at ab porro illum! Vero rem ipsam expedita!</p>
+// /Post::all();
+
+// Post::create([
+//     'title' => 'Page 4',
+//     'excerpt' => 'Lorem ipsum dolor sit amet consectetur...',
+//     'body' => '<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam placeat, qui et exercitationem quo nemo praesentium voluptatibus odit tenetur corrupti ut consequatur.</p><p>Sed laudantium nisi necessitatibus ad sunt earum voluptates voluptatibus, molestiae eos placeat totam obcaecati fuga incidunt iure similique. Consequuntur debitis at ab porro illum! Vero rem ipsam expedita!</p>'
+// )];

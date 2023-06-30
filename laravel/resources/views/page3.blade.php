@@ -7,8 +7,8 @@
     <section class="posts mb-5">
 
         <h3>{{ $item['title'] }}</h3>
-        <h5>Author: {{ $item['author'] }}</h5>
-        <p>{{ $item['content'] }}</p>
+        <h5>Author: {{ $item['excerpt'] }}</h5>
+        <p>{{ $item['body'] }}</p>
     </section>
 
     @endforeach
