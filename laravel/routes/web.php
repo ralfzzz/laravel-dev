@@ -1,6 +1,6 @@
 <?php
 
-// use App\Models\Post;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -103,12 +103,22 @@ Route::get('page3', [PostController::class, 'page3']);
 //untuk meng akses data di db melalui tinker menggunakan $tes->all(); data objeknya sudah dalam bentuk collecton jd sudah bisa menggunakan magic select di collection objek laravel;
 //summary DATABASE(menguhubungkannya di .env), MIGRATION(setup CRUD-nya (database/migrations/....php)), ELOQUENT(ORM)(setup menghubungkan datanya /app/Models/User.php)
 
-//Models
+//MODELS
 //<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam placeat, qui et exercitationem quo nemo praesentium voluptatibus odit tenetur corrupti ut consequatur.</p><p>Sed laudantium nisi necessitatibus ad sunt earum voluptates voluptatibus, molestiae eos placeat totam obcaecati fuga incidunt iure similique. Consequuntur debitis at ab porro illum! Vero rem ipsam expedita!</p>
 // /Post::all();
-
 // Post::create([
 //     'title' => 'Page 4',
 //     'excerpt' => 'Lorem ipsum dolor sit amet consectetur...',
 //     'body' => '<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam placeat, qui et exercitationem quo nemo praesentium voluptatibus odit tenetur corrupti ut consequatur.</p><p>Sed laudantium nisi necessitatibus ad sunt earum voluptates voluptatibus, molestiae eos placeat totam obcaecati fuga incidunt iure similique. Consequuntur debitis at ab porro illum! Vero rem ipsam expedita!</p>'
 // )];
+//php artisan mkae:model -m Post.....; akan menghasilkan model di app/Models & migration di database/migtations;
+//membuat column tabel ada di database/migrations/{filenya};
+//jika sudah setup php artisan migrate
+//input data melalui php artisan tinker;$post = new Post; di save dulu baru akan masuk ke db;
+//query tingker dengan post model Post::all();
+//ada mass assignment; pakai method create; Post::create([...,])
+//kecuali propertinya dapat diisi di model postnya
+//pakai method guarded['']
+//pakai $fillable / $guarded dulu baru bisa mass assgiment seperti create & update dkk
+//Route MOdel Bindings
+//ALURNYA berarti url diakses >> Route mengarahkan ke controller >> controller dengan method mengambil data db dengan mengarahkan ke Model & migration >> hasil db dikirim ke view oleh controller sehingga bisa diolah di view >> 
