@@ -3,6 +3,7 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\Category;
 
 
 /*
@@ -26,7 +27,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('page', function () {
+Route::get('/page', function () {
     return view('page', [
         'title' => 'Page',
         'nama' => 'Rifqi Aziz',
@@ -34,14 +35,14 @@ Route::get('page', function () {
     ]);
 });
 
-Route::get('page2', [PostController::class, 'index']);
+Route::get('/page2', [PostController::class, 'index']);
     // $content_page2 = [  
     // ];
 
 //halaman single post 
 //{slug} disebut wild card untuk mengambil apapun isi dari slash
 // Route::get('page2/post-1', function () {
-Route::get('page2/{post:slug}', [PostController::class, 'single']);
+Route::get('/page2/{post:slug}', [PostController::class, 'single']);
     // $slug = 'post-1';
     
     // return view('page2_1',[
@@ -49,7 +50,25 @@ Route::get('page2/{post:slug}', [PostController::class, 'single']);
     //     'posts' => Post::post($slug)
     //    ]);
 
-Route::get('page3', [PostController::class, 'page3']);
+Route::get('/page3', [PostController::class, 'page3']);
+
+Route::get('/categories/{category:slug}', function(Category $category){
+    return view('categories',[
+        'title' => $category->name,
+        // 'posts' => Post::find($slug)
+        'posts' => $category->posts,
+        'category' => $category->name
+       ]);
+});
+
+Route::get('/category', function () {
+    return view('category',[
+        'title' => "All Category",
+        // 'posts' => Post::find($slug)
+        'categories' => Category::all(),
+        // 'category' => $category->name
+       ]);
+});
 
 
 
@@ -122,3 +141,8 @@ Route::get('page3', [PostController::class, 'page3']);
 //pakai $fillable / $guarded dulu baru bisa mass assgiment seperti create & update dkk
 //Route MOdel Bindings
 //ALURNYA berarti url diakses >> Route mengarahkan ke controller >> controller dengan method mengambil data db dengan mengarahkan ke Model & migration >> hasil db dikirim ke view oleh controller sehingga bisa diolah di view >> 
+
+//RELATION ORM
+//ada one to one; dan has many; method untuk menghubungkan 2 db berbeda;
+//hubungkan post & cateogty dengan belongsTo / has Many; secara otomatis kategori akan masuk ke post; udah dijoin laravel;
+//initnya menghubungkan du db dengan category_id dengan method2;
