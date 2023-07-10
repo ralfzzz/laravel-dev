@@ -152,3 +152,4 @@ Route::get('/category', function () {
 //seeding untuk create data di db tetapi di buat mocking datanya dulu
 //php artisan make:seeder {name}
 //hubungkan antar model untuk foreign_id
+//M itu ORM database (migrations & model), V itu view di resource, C itu (router & controler)
