@@ -146,3 +146,9 @@ Route::get('/category', function () {
 //ada one to one; dan has many; method untuk menghubungkan 2 db berbeda;
 //hubungkan post & cateogty dengan belongsTo / has Many; secara otomatis kategori akan masuk ke post; udah dijoin laravel;
 //initnya menghubungkan du db dengan category_id dengan method2;
+
+//DATABASE SEEDER
+//butuh relasi foreign key untuk menghubungkan table model
+//seeding untuk create data di db tetapi di buat mocking datanya dulu
+//php artisan make:seeder {name}
+//

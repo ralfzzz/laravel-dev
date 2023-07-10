@@ -14,6 +14,8 @@
             </h3>
             <h5> Author: {{ $item->excerpt }}</h5>
             <p>{{ $item->body }}</p>
+        <a href="/category/">Back</a>
+
         </section>
 
     @endforeach
