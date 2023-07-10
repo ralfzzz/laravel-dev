@@ -151,4 +151,4 @@ Route::get('/category', function () {
 //butuh relasi foreign key untuk menghubungkan table model
 //seeding untuk create data di db tetapi di buat mocking datanya dulu
 //php artisan make:seeder {name}
-//
+//hubungkan antar model untuk foreign_id
