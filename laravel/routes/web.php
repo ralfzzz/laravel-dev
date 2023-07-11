@@ -4,6 +4,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
+use App\Models\User;
 
 
 /*
@@ -57,7 +58,7 @@ Route::get('/categories/{category:slug}', function(Category $category){
         'title' => $category->name,
         // 'posts' => Post::find($slug)
         'posts' => $category->posts,
-        'category' => $category->name
+        'category' => $category->name,
        ]);
 });
 
@@ -70,7 +71,13 @@ Route::get('/category', function () {
        ]);
 });
 
-
+Route::get('/authors/{author:username}', function(User $author){
+    return view('page2',[
+        'title' => "User Posts",
+        // 'posts' => Post::find($slug)
+        'posts' => $author->posts,
+       ]);
+});
 
 // di public untuk assets css, js, img, dll
 // di resources/views sebagai setup tampilan yang akan ditampilkan supaya tidak berulang
