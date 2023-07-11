@@ -160,3 +160,17 @@ Route::get('/authors/{author:username}', function(User $author){
 //php artisan make:seeder {name}
 //hubungkan antar model untuk foreign_id
 //M itu ORM database (migrations & model), V itu view di resource, C itu (router & controler)
+
+//FACTORY & FAKER
+//factory untuk membuat mocking data dummy 
+//ada di /database/{}factory
+//di dalma laravel terdapat library faker fake()->{}
+//php artisan make:factory {nama}
+//faker diconfig di /config/app.php; diset di .env
+//php artisan make:model -mfs (migrasi, factory, & seeder)
+//di faker ada beberapa libray variabel random semisal nama , email, sentence, dkk
+//php artisan db:seed; php artisan migrate:fresh --seed
+//data terbaru ke controller; all() diganti menjadi latest()->get();
+//bisa buat alias di model untuk menghubungkan antar tabel; 
+//foreign id itu penting untuk menghubungkan model orm ya; namnya harus sesuai;
+
