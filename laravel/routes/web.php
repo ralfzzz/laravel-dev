@@ -54,8 +54,8 @@ Route::get('/page2/{post:slug}', [PostController::class, 'single']);
 Route::get('/page3', [PostController::class, 'page3']);
 
 Route::get('/categories/{category:slug}', function(Category $category){
-    return view('categories',[
-        'title' => $category->name,
+    return view('page2',[
+        'title' => 'Post Category: '.$category->name,
         // 'posts' => Post::find($slug)
         'posts' => $category->posts,
         'category' => $category->name,
@@ -73,7 +73,7 @@ Route::get('/category', function () {
 
 Route::get('/authors/{author:username}', function(User $author){
     return view('page2',[
-        'title' => "User Posts",
+        'title' => "Posts by: ".$author->name,
         // 'posts' => Post::find($slug)
         'posts' => $author->posts,
        ]);
@@ -174,3 +174,5 @@ Route::get('/authors/{author:username}', function(User $author){
 //bisa buat alias di model untuk menghubungkan antar tabel; 
 //foreign id itu penting untuk menghubungkan model orm ya; namnya harus sesuai;
 
+//N+1 Problem ORM QUERY
+//
