@@ -181,4 +181,4 @@ Route::get('/authors/{author:username}', function(User $author){
 //eager loading
 //eager loading di controller dengan menambahkan method with(['a','b'])
 //lazy eager loading ketika routes model bindings; menambahkan ->load(['a','b'])
-//
+//ditambahkan ketika query post karena satu post memiliki 1 author & category sehignga ketika ada post lain akan diulang dan menjadi n+1 problem
