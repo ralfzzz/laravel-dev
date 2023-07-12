@@ -175,4 +175,6 @@ Route::get('/authors/{author:username}', function(User $author){
 //foreign id itu penting untuk menghubungkan model orm ya; namnya harus sesuai;
 
 //N+1 Problem ORM QUERY
+//query yang berlebih dikarenakan hubungan model orm, semisal ketika model post, auhtor, category saling berhubng, ketika post dipanggil dan membutuhkan data author & category untuk viewnya & foreach, maka query akan dilakukan setiap kali data author id=1 dipanggil view; ketika post dipanggil author blum diquery; harusnya satu kali run mengquery posts, authors, & categories sekaligus;
+//lazy loading
 //
