@@ -57,8 +57,8 @@ Route::get('/categories/{category:slug}', function(Category $category){
     return view('page2',[
         'title' => 'Post Category: '.$category->name,
         // 'posts' => Post::find($slug)
-        'posts' => $category->posts,
-        'category' => $category->name,
+        'posts' => $category->posts->load(['author','category']),
+        // 'category' => $category->name,
        ]);
 });
 
@@ -75,7 +75,7 @@ Route::get('/authors/{author:username}', function(User $author){
     return view('page2',[
         'title' => "Posts by: ".$author->name,
         // 'posts' => Post::find($slug)
-        'posts' => $author->posts,
+        'posts' => $author->posts->load(['author','category']),
        ]);
 });
 
@@ -177,4 +177,8 @@ Route::get('/authors/{author:username}', function(User $author){
 //N+1 Problem ORM QUERY
 //query yang berlebih dikarenakan hubungan model orm, semisal ketika model post, auhtor, category saling berhubng, ketika post dipanggil dan membutuhkan data author & category untuk viewnya & foreach, maka query akan dilakukan setiap kali data author id=1 dipanggil view; ketika post dipanggil author blum diquery; harusnya satu kali run mengquery posts, authors, & categories sekaligus;
 //lazy loading
+//clockwork library untuk melihat optimasi website yang diintal di laravel
+//eager loading
+//eager loading di controller dengan menambahkan method with(['a','b'])
+//lazy eager loading ketika routes model bindings; menambahkan ->load(['a','b'])
 //
