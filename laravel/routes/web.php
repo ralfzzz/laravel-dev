@@ -182,3 +182,14 @@ Route::get('/authors/{author:username}', function(User $author){
 //eager loading di controller dengan menambahkan method with(['a','b'])
 //lazy eager loading ketika routes model bindings; menambahkan ->load(['a','b'])
 //ditambahkan ketika query post karena satu post memiliki 1 author & category sehignga ketika ada post lain akan diulang dan menjadi n+1 problem
+
+//REDESIGN UI
+//bisa pakai bootstrap card
+//pakai col-
+//ada kondisi cek postingan @if blade ->count()
+//bisa dibuat $with model agar bisa eager loading; dibuat dulu di modelnya;
+//ada fungsi laravel diffForHumans(); menjadi bla bla bla ago; library carbon laravel
+//ada api url generate random image di unsplah;
+//ada methos skip di laravel @foreach untuk skip line
+//untuk buat kotak mengambang label pakai position-absolute 
+//collect() bisa untuk metod2 seperti map & implode sehingga array lebih mudah diolah;
