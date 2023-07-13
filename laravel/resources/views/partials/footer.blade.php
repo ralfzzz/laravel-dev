@@ -1,4 +1,4 @@
-<div class="card mt-auto">
+<div class="card footer mt-auto">
     <div class="card-header">
       Quote
     </div>

@@ -40,5 +40,12 @@ body{
 .card, .card-header, .card-body {
     color: #AFEB8F !important;
     background-color: #002F7B !important;
+}
+
+.card{
+    border: 2px solid #AFEB8F !important;
+}
+
+.card.footer{
     border: 0px !important;
 }
