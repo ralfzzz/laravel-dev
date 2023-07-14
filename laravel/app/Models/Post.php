@@ -33,11 +33,19 @@ class Post extends Model
                     ->orWhere('body','like','%'.$search.'%');
         });
 
-        $query->when($filters['category'] ?? false, function($query, $category){
-            return $query->whereHas('category', function($query) use ($category){
-                $query->where('slug', $category);
-            });
-        });
+        // $query->when($filters['category'] ?? false, function($query, $category){
+        //     return $query->whereHas('category', function($query) use ($category){
+        //         $query->where('slug', $category);
+        //     });
+        // });
+
+        $query->when($filters['category'] ?? false, fn($query, $category) =>
+            //menghubungakn query dari tabel posts dengan tabel categories 
+            $query->whereHas('category', fn($query) =>  
+            //end
+                $query->where('slug', $category)
+            )
+        );
     }
 
     public function category(): BelongsTo

@@ -193,3 +193,25 @@ Route::get('/authors/{author:username}', function(User $author){
 //ada methos skip di laravel @foreach untuk skip line
 //untuk buat kotak mengambang label pakai position-absolute 
 //collect() bisa untuk metod2 seperti map & implode sehingga array lebih mudah diolah;
+
+//SEARCH & APGINATIONS
+//menambahkan input search dengan form method get;
+//untuk menangkap search pakai request('name')
+//nantinya tidak pakai model controller category/author lagi tp langsung pakai posts + query
+//yang disetup querynya
+//di laravel ada yang namanya Query Builder untuk membentuk query db dengan ORM
+//querynya itu TUGAS MODEL; ada yang namnya query scope LOKAL;
+//scopeExample($query); query ini ngambil dari method sebelumnya ->
+//buat method filternya di model baru dipakai di controller;
+//sedangkan request itu tugas Controller
+//when method dapat menggantikan method tp untuk collections; collect
+//ada null coalecing operator mirip ternary operator tp khusus isset (??)
+//ada query join method yaitu whereHas
+//untuk menerapkan fitur tambahkan di view posts/page2
+//dihubungkannya ada di model tp logic inputnya dengan request url
+//urlnya untuk membuat 2 request get url ditambahkan dengan tag form dan input di html;
+//logic2nya ada di controller ya
+//untuk membuat pagination di laravel ada method ->paginate(jumlah_posting_tampil) untuk menampilkan yang diquery per page; ganti get() yang menampilkan semua;
+//menmabhakna navigator linknya paginate; ambil query dan pakai method ->links()
+//default laravel itu pakai tailwind kalau mau pakai bootstrap harus diconfig dulu di lravel
+//ada method withQueryString untuk membawa apapun query string sebelumnya

@@ -9,6 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-6">
             <form action="/page2">
+                {{-- JOIN 2 URL --}}
                 @if(request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
