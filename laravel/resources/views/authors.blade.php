@@ -6,7 +6,7 @@
 @section('container')
     <h1 class="text-center mb-3">{{ $title }}</h1>
 
-    <div class="row justify-content-center">
+    {{-- <div class="row justify-content-center">
         <div class="col-6">
             <form action="/page2">
                 @if(request('category'))
@@ -18,7 +18,7 @@
                   </div>
             </form>
         </div>
-    </div>
+    </div> --}}
 
     @if($posts->count())
             <div class="card my-4 text-center">
@@ -38,7 +38,7 @@
 
             <div class="col-4 mb-3 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <div class="position-absolute px-3 py-2 text-light" style="background-color: rgba(0, 0, 0, 0.7)"><a href="/page2?category={{ $item->category->slug }}" class="text-decoration-none"> {{ $item->category->name }}</a></div>
+                    <div class="position-absolute px-3 py-2 text-light" style="background-color: rgba(0, 0, 0, 0.7)"><a href="/page2?category{{ $item->category->slug }}" class="text-decoration-none"> {{ $item->category->name }}</a></div>
                     <img src="https://source.unsplash.com/300x150?{{ $item->category->name }}" class="card-img-top" alt="card image">
                     <div class="card-body">
                         <h5 class="card-title"><a href="/page2/{{ $item->slug }}" class="text-decoration-none">{{ $item->title }}</a></h5>
@@ -69,9 +69,5 @@
         @else
         <p class="text-center fs-5">No post found!</p>
         @endif
-        <div class="d-flex justify-content-center">
-            {{ $posts->links() }}
-        </div>
     
 @endsection
-

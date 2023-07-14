@@ -53,14 +53,14 @@ Route::get('/page2/{post:slug}', [PostController::class, 'single']);
 
 Route::get('/page3', [PostController::class, 'page3']);
 
-Route::get('/categories/{category:slug}', function(Category $category){
-    return view('page2',[
-        'title' => 'Post Category: '.$category->name,
-        // 'posts' => Post::find($slug)
-        'posts' => $category->posts->load(['author','category']),
-        // 'category' => $category->name,
-       ]);
-});
+// Route::get('/categories/{category:slug}', function(Category $category){
+//     return view('page2',[
+//         'title' => 'Post Category: '.$category->name,
+//         // 'posts' => Post::find($slug)
+//         'posts' => $category->posts->load(['author','category']),
+//         // 'category' => $category->name,
+//        ]);
+// });
 
 Route::get('/category', function () {
     return view('category',[
@@ -72,7 +72,7 @@ Route::get('/category', function () {
 });
 
 Route::get('/authors/{author:username}', function(User $author){
-    return view('page2',[
+    return view('authors',[
         'title' => "Posts by: ".$author->name,
         // 'posts' => Post::find($slug)
         'posts' => $author->posts->load(['author','category']),

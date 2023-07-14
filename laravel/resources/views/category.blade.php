@@ -9,7 +9,7 @@
         {{-- @dd($item) --}}
         {{-- <h2><a href="/categories/{{ $item->slug }}">{{ $item->name }}</a></h2> --}}
         <div class="col-4">
-            <a href="/categories/{{ $item->slug }}">
+            <a href="/page2?category={{ $item->slug }}">
                 <div class="card text-bg-dark text-center">
                     <img src="https://source.unsplash.com/300x300?{{ $item->name }}" class="card-img" alt="category image">
                     <div class="card-img-overlay d-flex p-0" >

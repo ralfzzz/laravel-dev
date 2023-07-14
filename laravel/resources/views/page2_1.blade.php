@@ -9,7 +9,7 @@
                     <h3>{{ $posts->title }}</h3>
                     <img src="https://source.unsplash.com/1200x300?{{ $posts->category->name }}" class="card-img-top my-2 img-fluid" alt="hero">
                     <small>
-                        <p>Author: <a href="/authors/{{ $posts->author->username }}" class="text-decoration-none"> {{ $posts->author->name }} </a> in <a href="/categories/{{ $posts->category->slug }}" class="text-decoration-none">{{ $posts->category->name }}</a></p>
+                        <p>Author: <a href="/authors/{{ $posts->author->username }}" class="text-decoration-none"> {{ $posts->author->name }} </a> in <a href="/page2?category={{ $posts->category->slug }}" class="text-decoration-none">{{ $posts->category->name }}</a></p>
                     </small>
                     <p>{!! $posts->body !!}</p>
                 </section>
