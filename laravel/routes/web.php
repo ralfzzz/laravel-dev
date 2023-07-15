@@ -219,3 +219,14 @@ Route::get('/register', [RegisterController::class, 'index']);
 //menmabhakna navigator linknya paginate; ambil query dan pakai method ->links()
 //default laravel itu pakai tailwind kalau mau pakai bootstrap harus diconfig dulu di lravel
 //ada method withQueryString untuk membawa apapun query string sebelumnya
+
+//REGISTRATION&LOGIN VIEW
+//untuk mengambil example bootstrap compact download examplenya trus pilih folder signinnya
+//menambah navbar login tambah tag ul baru; supaya bisa pindah
+//untuk panggil bootstrap icons pasang dulu librarinya karena tidak jasdi satu dengan bootstrapnya
+//urutan buatnya route, controller, view
+//atribut name html itu penting untuk submit data
+//supaya lebih rapi bisa dibuat folder di view resourcenya
+//data form di register disesuaikan dengan isi data db tabel user
+//atribut id,type,name,label,placeholde; atribut yang penting untuk diperhatikan
+//
