@@ -8,5 +8,8 @@
         {{-- <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
         <li class="nav-item"><a href="#" class="nav-link">About</a></li> --}}
       </ul>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/login" class="nav-link {{ ($title === 'Login' || $title === 'Register')? 'active' : '' }}"><i class="bi bi-door-open-fill"></i>Login</a></li>
+      </ul>
     </header>
   </div>
