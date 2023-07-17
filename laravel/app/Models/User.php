@@ -21,16 +21,16 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'username',
-        'email',
-        'password',
-    ];
-
-    // protected $guarded =[
-    //     'id'
+    // protected $fillable = [
+    //     'name',
+    //     'username',
+    //     'email',
+    //     'password',
     // ];
+
+    protected $guarded =[
+        'id',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -53,9 +53,9 @@ class User extends Authenticatable
 
     use HasFactory;
 
-    protected $guarded = [
-        'id'
-    ];
+    // protected $guarded = [
+    //     'id'
+    // ];
 
     public function posts(): HasMany
     {

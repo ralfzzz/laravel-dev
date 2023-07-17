@@ -231,3 +231,29 @@ Route::post('/register', [RegisterController::class, 'store']);
 //data form di register disesuaikan dengan isi data db tabel user
 //atribut id,type,name,label,placeholde; atribut yang penting untuk diperhatikan
 //
+
+//USER REGISTRATION
+//di html form dikasih action ke "/login" & methodnya POST untuk mengisi form
+//di routenya juga ganti jd POST; Route:post untuk mengambil data post
+//buat methodnya id controller
+//ada namnya @csrf cross-site-request-forgery; ngebajak request kita dr website orang lain
+//masukkan @crfs di form view; @csrf = input hidden value crsf_token
+//validasi isi form kosong atau batas karakter atau uniq atau email dns
+//ada method ->validate([...]); ada beberapa rules di docs laravelnya;
+//ada directrive blade instilahnya
+//untuk memunculkan error pakai blade bisa pakai @error('name') atribut di html is-invalid @enderror
+//di bootstrap ada clas invalid-feedback
+// untuk memunculkan massege error validation laravel pakai blade {{ $message }};
+//ada atribut required di html untuk lebih aman
+//atribut value di form juga penting ges
+//ada validate email dns di laravel
+//ada blade utnuk atribut value {{ old('name') }}
+//untuk memasukkan ke tb database pakai maggil model User::create($data);
+//password pakai hash encryptions; 
+//setelah registrasi ada method rerdirect di laravel untuk pindah ke login halaman
+//redirect('/login)
+//flash data session adalah mengirim data tp tidak get dr databse tp dikirim dari kontroller
+//setelah itu datanya flash bisa diambil biasa kaya ngambil dr variabel dr db
+//ada method has untuk cek has ->has('succes')
+//untuk mengirim data session flas pakai session()->flash(array);
+//untuk mengambil data flash session panggil method sessionnya; session('array_key')
