@@ -82,6 +82,7 @@ Route::get('/authors/{author:username}', function(User $author){
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 // di public untuk assets css, js, img, dll
 // di resources/views sebagai setup tampilan yang akan ditampilkan supaya tidak berulang
