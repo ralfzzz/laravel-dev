@@ -265,3 +265,31 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 //ada method has untuk cek has ->has('succes')
 //untuk mengirim data session flas pakai session()->flash(array);
 //untuk mengambil data flash session panggil method sessionnya; session('array_key')
+
+//LOGIN & MIDDLEWARE
+//di laravel ada fitur authentication
+//ada plugin untuk login auth0 dan authe
+//ada juga auth yang manual facades
+//ingat kalau form submit pakai atribut action dan method; action mengarah ke route
+//form jagan lupa @crfs
+//atribut name, id, value dll penting ges
+//bikin routesnya; method arah url
+//includekan librarynya
+//validate dulu seperti mau register ke db; logicnya mirip atribut required id html
+//@error('email) => ketika input email tidak sesuai validate;
+//istilahnya directive blade
+//ketika lolos validate blum tentu emailnya/password sesuai
+//Auth::attempt($credential); mencocokkan dengan db
+//session fixation 
+//method intentded dikasih supaya melewati middleware
+//setelah auth berhasil atau gagal di if(Auth::attempt)
+//masukkan flash error keterangan
+//middleware berada di antara route dan controller
+//ketika sudah login auth mengakses halaman untuk guest maka akan mengarah ke default; defautlt settingnya ada di app/provider
+//directive blade bisa cek kalau udah login atau masih guest; menggunakan @auth @endauth
+//auth berisi dan terhubung juga dnegan model user; atuh()->user()->namespace
+//untuk logout butuh form juga
+//dibuat route dan controller sendiri di loginController
+//dikasih tau di route untuk user auth/guest yang bisa akses pagenya
+//kalau ada user yang blum login mau akses user auth maka config dulu di //app/http/authentivate/ default halaman loginnya 
+//mendefinisikan nama route dengan ->name('login')
