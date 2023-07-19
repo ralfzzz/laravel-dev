@@ -299,3 +299,12 @@ Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 //DASHBOARD UI
 //kalau mau buat layouts dan partial buat semuanya dulu di main baru dipisah2
+//kalau mau login/logout atau post pakai form button supaya kedetect sectionnya bisa memproses route middleware controller viewnya
+//untuk CRUD ada route yang namanya REsource Controller
+//routenya sudah masuk di Raoute::resource  Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+//ketika membuat resource controller bisa sekaliatn terhubung dengan model kita dengan menambahkan --model:Post --no-interaction
+//active bar bisa pakai Request Request::is('dashboard/posts') ? 'active' : ''
+//menghubungkan model query dengan where ('user_id', auth()->user()->id)->get();
+//ada blade interactiv untuk @foreach $loop->interation
+//ada route model binding getKeyRoute untuk mengkotumize default slug dimasukkan ke model
+//
