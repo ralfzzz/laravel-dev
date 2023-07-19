@@ -5,8 +5,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostController;
 use App\Models\Category;
-// use App\Models\User;
+use App\Models\User;
 
 
 /*
@@ -89,6 +90,8 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 
 
@@ -293,3 +296,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 //dikasih tau di route untuk user auth/guest yang bisa akses pagenya
 //kalau ada user yang blum login mau akses user auth maka config dulu di //app/http/authentivate/ default halaman loginnya 
 //mendefinisikan nama route dengan ->name('login')
+
+//DASHBOARD UI
+//kalau mau buat layouts dan partial buat semuanya dulu di main baru dipisah2
