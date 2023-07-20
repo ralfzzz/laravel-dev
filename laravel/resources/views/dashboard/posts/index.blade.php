@@ -3,10 +3,12 @@
 @section('container')
     
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-      <h1 class="h2">My Posts</h1>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+      <h1 class="h2 my-0">My Posts</h1>
     </div>
+    <hr />
 
+    <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create New Post</a>
     {{-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> --}}
 
     <div class="table-responsive">

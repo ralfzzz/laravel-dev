@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Builder;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 
 class Post extends Model
 {
     use HasFactory;
+    use Sluggable;
 
     protected $guarded = [
         'id'
@@ -59,8 +61,17 @@ class Post extends Model
     }
 
     public function getRouteKeyName()
-{
-    return 'slug';
-}
+    {
+        return 'slug';
+    }
+
+    public function sluggable(): array
+        {
+            return [
+                'slug' => [
+                    'source' => 'title'
+                ]
+            ];
+        }
     
 }

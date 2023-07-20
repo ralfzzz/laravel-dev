@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="website portfolio">
     <meta name="author" content="RALFZZZ">
+    {{-- trix editor --}}
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     {{-- <meta name="generator" content="Jekyll v4.1.1"> --}}
     <title>DEV | My Dashboard</title>
 
@@ -16,6 +19,11 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
+    <style>
+      trix-toolbar [data-trix-button-group="file-tools"]{
+        display :none;
+      }
+    </style>
 </head>
 <body>
     @include('dashboard.partials.navbar')
