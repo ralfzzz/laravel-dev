@@ -310,3 +310,13 @@ Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware(
 //ada blade interactiv untuk @foreach $loop->interation
 //ada route model binding getKeyRoute untuk mengkotumize default slug dimasukkan ke model
 //
+
+//POST FORM DASHBOARD
+//untuk membuat link form tambah data pakai /dashboard/posts/{{ create }} createnya default
+//atribut atribut di input form penting ya seperti id,name,value,clas,type
+//ada package di composer laravel namnya eloquent slugable untuk membuat slug
+//ada yang namanya fecth api js
+//$slug = SlugService::createSlug(Post::class, 'slug', $request->title); untuk mengubah dan mengecke titile menjadi sebuah slug
+//ada namanya trix editor untuk membuat format form input editor text
+//hilangkan tombol file upload di trix editor
+//
