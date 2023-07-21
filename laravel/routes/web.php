@@ -320,3 +320,11 @@ Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware(
 //ada namanya trix editor untuk membuat format form input editor text
 //hilangkan tombol file upload di trix editor
 //
+
+//VALIDATE & INSERT POST
+//sebelum insert ke db baut validate di laravel dulu
+//blade directive {{ old('naem') }}
+//ada library laravel untuk melimit string
+//fungis php strip_tags()
+//->with('succes','messafe') mengirim flash message
+//

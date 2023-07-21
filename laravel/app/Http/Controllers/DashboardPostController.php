@@ -47,7 +47,8 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            // 'user_id' => auth()->user()->id,
         ]);
 
         $validateInput['user_id'] = auth()->user()->id;
