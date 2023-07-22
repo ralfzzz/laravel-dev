@@ -97,6 +97,21 @@ Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // di public untuk assets css, js, img, dll
 // di resources/views sebagai setup tampilan yang akan ditampilkan supaya tidak berulang
 // di routes web.php untuk mengarahkan akses alamatnya
@@ -339,4 +354,20 @@ Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware(
 //delte dikasih alert untuk pertimbangan lagi
 //mengakali jika slug tidak diubah tetapi tetap mau diupdate sama; sedangkan slug harus uniq
 //untuk update Post::where('id', 1)->update($var); update dengan ORM
+//
+
+//UPLOAD IMAGE
+//untuk membuat form bisa mengambil file & upload tambahkan atribut enctype="multipart/form-data" di tag form
+//cara method simpan filenya $request->file('name input')->store('folder')
+//ada dokumentasi file storeage di laravel yang menjelaskan library flysystem; library untuk menyimpan file
+//untuk config ada di /config/filesystem.php
+//secara default disimapan di local tetapi tidak bisa diakses publik, makanya oerlu s=disetup supaynya simpanya di storage/public
+//setup dengan di .env dengan FIL:ESAYSTEM_DRIVEr=public
+//untuk integrasi direktori storage/public dan public/storang gunakan yang namnya simbolic link; php artisan storage:link
+//ada aturan validasi untuk file; validate('file|max)
+//file image ngga wajib jd dibuat login
+//jika ada file gambar maka tampilka jika tidak tampilkan gambar squash
+//cara nampilkan gambar public dengan alamat '/storage/{{ data image di database }}'
+//file('image yg dikirim request')->stror('tempat save') selain save dia akan mengembalikan nama gambar dan tempat menyimpannya semisal post_images/asdfasdf.jpg
+//untuk menampilkan image di db pakai method blade directive dengan asset('storage/{{ $variabel kolom image di database yang disimpan method file()->store }})
 //
