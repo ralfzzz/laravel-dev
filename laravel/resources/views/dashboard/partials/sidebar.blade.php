@@ -13,6 +13,12 @@
             My Posts
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">
+            <span data-feather="book-open"></span>
+            Home
+          </a>
+        </li>
       </ul>
     </div>
   </nav>

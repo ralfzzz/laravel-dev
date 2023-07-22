@@ -10,7 +10,7 @@
     <div class="col-lg-8 mb-4">
         <a href="/dashboard/posts" class="btn btn-primary mb-3">Back to All Posts</a>
         
-        <form action="/dashboard/posts" method="POST">
+        <form action="/dashboard/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>
@@ -37,17 +37,29 @@
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
-                  </select>
+                </select>
             </div>
-            <label for="body">Content</label>
-            <input id="body" type="hidden" name="body" class="@error('body') is-invalid @enderror" value="{{ old('body') }}" required>
-            @error('body')
-                  <div class="invalid-feedback mb-2">
-                      {{ $message }}
-                  </div>
-            @enderror
-            <trix-editor input="body"></trix-editor>
-            <button type="submit" class="btn btn-primary my-3">Create Post</button>
+            <div class="form-group">
+                <label for="image" class="form-label">Post Image</label>
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
+                @error('image')
+                <div class="invalid-feedback mb-2">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="form-group">
+
+                <label for="body">Content</label>
+                <input id="body" type="hidden" name="body" class="@error('body') is-invalid @enderror" value="{{ old('body') }}" required>
+                @error('body')
+                <div class="invalid-feedback mb-2">
+                    {{ $message }}
+                </div>
+                @enderror
+                <trix-editor input="body"></trix-editor>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">Create Post</button>
         </form>
     </div>
     

@@ -328,3 +328,15 @@ Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware(
 //fungis php strip_tags()
 //->with('succes','messafe') mengirim flash message
 //
+
+//EDIT & DELETE POST
+//kalau mau pakai method post/put pakai form
+//tag a href defaultnya method get
+//untuk delte pakai Post::destroy(id)
+//kenapa slug dikrim karena defaultnya getKeyRoute diganti slug
+//edit untuk menampilkan viewnya dan update untuk mengupdate db
+//ada bldae interactive @method('put') untuk mengubah method yang html nda bisa hnya post/get
+//delte dikasih alert untuk pertimbangan lagi
+//mengakali jika slug tidak diubah tetapi tetap mau diupdate sama; sedangkan slug harus uniq
+//untuk update Post::where('id', 1)->update($var); update dengan ORM
+//

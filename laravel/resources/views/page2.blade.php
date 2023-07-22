@@ -23,7 +23,16 @@
 
     @if($posts->count())
             <div class="card my-4 text-center">
+                @if($posts[0]->image)
+                <div style="max-height:400px; overflow:hidden" >
+                    <img src="{{ asset('storage/'.$posts[0]->image) }}" class="card-img-top my-2 img-fluid" alt="hero">
+                </div>
+                    
+                @else
+                {{-- <img src="https://source.unsplash.com/1200x300?{{ $post->category->name }}" class="card-img-top my-2 img-fluid" alt="hero"> --}}
                 <img src="https://source.unsplash.com/1200x300?{{ $posts[0]->category->name }}" class="card-img-top" alt="hero">
+                
+                @endif
                 <div class="card-body">
                     <h5 class="card-title"><a href="/page2/{{ $posts[0]->slug }}" class="text-decoration-none">{{ $posts[0]->title }}</a></h5>
                     <small>
@@ -40,7 +49,17 @@
             <div class="col-4 mb-3 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
                     <div class="position-absolute px-3 py-2 text-light" style="background-color: rgba(0, 0, 0, 0.7)"><a href="/page2?category={{ $item->category->slug }}" class="text-decoration-none"> {{ $item->category->name }}</a></div>
-                    <img src="https://source.unsplash.com/300x150?{{ $item->category->name }}" class="card-img-top" alt="card image">
+                    @if($item->image)
+                        {{-- <div style="max-height:400px; overflow:hidden" > --}}
+                            <img src="{{ asset('storage/'.$item->image) }}" class="card-img-top my-2 img-fluid" alt="hero">
+                        {{-- </div> --}}
+                            
+                        @else
+                        {{-- <img src="https://source.unsplash.com/1200x300?{{ $post->category->name }}" class="card-img-top my-2 img-fluid" alt="hero"> --}}
+                        {{-- <img src="https://source.unsplash.com/1200x300?{{ $posts[0]->category->name }}" class="card-img-top" alt="hero"> --}}
+                        <img src="https://source.unsplash.com/300x150?{{ $item->category->name }}" class="card-img-top" alt="card image">
+                        
+                        @endif
                     <div class="card-body">
                         <h5 class="card-title"><a href="/page2/{{ $item->slug }}" class="text-decoration-none">{{ $item->title }}</a></h5>
                         <small><p class="mb-2">Author: <a href="/authors/{{ $item->author->username }}" class="text-decoration-none"> {{ $item->author->name }} </a> | Last updated {{ $item->updated_at->diffForHumans() }}</p></small>

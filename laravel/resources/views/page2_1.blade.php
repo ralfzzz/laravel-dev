@@ -7,7 +7,17 @@
             <div class="col-8">
                 <section class="posts">
                     <h3>{{ $posts->title }}</h3>
+                    @if($posts->image)
+                    <div style="max-height:400px; overflow:hidden" >
+                        <img src="{{ asset('storage/'.$posts->image) }}" class="card-img-top my-2 img-fluid" alt="hero">
+                    </div>
+                        
+                    @else
+                    {{-- <img src="https://source.unsplash.com/1200x300?{{ $post->category->name }}" class="card-img-top my-2 img-fluid" alt="hero"> --}}
+                    {{-- <img src="https://source.unsplash.com/1200x300?{{ $posts[0]->category->name }}" class="card-img-top" alt="hero"> --}}
                     <img src="https://source.unsplash.com/1200x300?{{ $posts->category->name }}" class="card-img-top my-2 img-fluid" alt="hero">
+                    
+                    @endif
                     <small>
                         <p>Author: <a href="/authors/{{ $posts->author->username }}" class="text-decoration-none"> {{ $posts->author->name }} </a> in <a href="/page2?category={{ $posts->category->slug }}" class="text-decoration-none">{{ $posts->category->name }}</a></p>
                     </small>

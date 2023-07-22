@@ -9,7 +9,17 @@
                     <section class="posts">
                         <h3>{{ $post->title }}</h3>
                         <a href="/dashboard/posts" class="btn btn-primary mt-3">Back to All My Posts</a>
+                        @if($post->image)
+                        <div style="max-height:400px; overflow:hidden" >
+
+                            <img src="{{ asset('storage/'.$post->image) }}" class="card-img-top my-2 img-fluid" alt="hero">
+                        </div>
+                            
+                        @else
                         <img src="https://source.unsplash.com/1200x300?{{ $post->category->name }}" class="card-img-top my-2 img-fluid" alt="hero">
+                        
+                        @endif
+
                         <p>{!! $post->body !!}</p>
                     </section>
                 </div>
