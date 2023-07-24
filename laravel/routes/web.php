@@ -371,3 +371,11 @@ Route::Resource('/dashboard/posts', DashboardPostController::class)->middleware(
 //file('image yg dikirim request')->stror('tempat save') selain save dia akan mengembalikan nama gambar dan tempat menyimpannya semisal post_images/asdfasdf.jpg
 //untuk menampilkan image di db pakai method blade directive dengan asset('storage/{{ $variabel kolom image di database yang disimpan method file()->store }})
 //
+
+//PREVIEW, UPDATE, DELETE IMAGE
+//bisa dibuat logic untuk menampilkan image setelah memiolih akan diupload
+//preview dibuat dengan bantuan fungsi javascript
+//document ectype untuk form supaya bisa baca file
+//logic edit ketika akan diganti gambar makan gambar yang lama dihapus dulu
+//ketika post di delete buat logic gamabr yang di storage juga delet
+//
